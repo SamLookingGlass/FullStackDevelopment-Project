@@ -1,36 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block page_title %}{% endblock %}</title>
+    {% load static %}
+    <!-- Own Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
+
+    <!-- Bootstrap CSS CDN-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Google Fonts CSS CDN-->
+    <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
+
 <body>
+
+    <nav class="navbar navbar-dark bg-dark justify-content-between">
+        <a href="/" class="navbar-brand"><img id="navlogo" class="img-fluid" src="{% static 'images/logo.png' %}" alt="Teff Logo"></a>
+
+        <div class="d-inline">
+            <ul id="navstyle" class="d-inline">
+                {% if not user.is_authenticated %}
+                <li class="d-inline"><a href="{% url 'login' %}">Login</a></li>
+                <li class="d-inline"><a href="{% url 'register' %}">Register</a></li>
+                <li class="d-inline"><a href="/password_reset">Forgot Your Password?</a></li>
+                {% endif %} {% if user.is_authenticated %}
+                <li class="d-inline">Profile</li>
+                <li class="d-inline"><a href="{% url 'logout' %}">Logout</a></li>
+
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+
+
+    <section>
+        <div class="jumbotron">
+            <h1 class="display-4">Hello, world!</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4">
+            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+            </p>
+        </div>
+    </section>
     
-    {% if messages %}
-    <div>
-        {% for message in messages %} {{ message }} {% endfor %}
+    <div class="row d-lg-flex">
+        {% if messages %}
+        <div>
+            {% for message in messages %} {{ message }} {% endfor %}
+        </div>
+        {% endif %}
+
+
+        <h1>{% block page_heading %}{% endblock %}</h1>
+        <div>
+            {% block content %}{% endblock %}
+        </div>
     </div>
-    {% endif %}    
-    
-   <ul>
-       {% if not user.is_authenticated %}
-        <li><a href="{% url 'login' %}">Login</a></li>
-         <li><a href="{% url 'register' %}">Register</a></li>
-         <li><a href="/password_reset">Forgot Your Password?</a></li>
-        {% endif %}
-       
-        <li>Profile</li>
-        {% if user.is_authenticated %}
-        <li><a href="{% url 'logout' %}">Logout</a></li>
-      
-        {% endif %}
-   </ul>
-   <h1>{% block page_heading %}{% endblock %}</h1>
-   <div>
-       {% block content %}{% endblock %}
-   </div>
-   
+
+
 </body>
+
 </html>

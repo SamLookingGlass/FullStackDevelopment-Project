@@ -1,0 +1,16 @@
+body {
+    background-color: yellow;
+}
+
+
+
+/*Navbar*/
+#navstyle li {
+    margin:10px;
+    
+}
+
+#navlogo {
+    width:8vw;
+    height:100%;
+}
