@@ -34,6 +34,11 @@
                 <li class="d-inline"><a href="{% url 'login' %}">Login</a></li>
                 <li class="d-inline"><a href="{% url 'register' %}">Register</a></li>
                 <li class="d-inline"><a href="/password_reset">Forgot Your Password?</a></li>
+                
+                <!--Test Links-->
+                <li class="d-inline"><a href="{% url 'show_todos' %}">CRUD</a></li>
+                <li class="d-inline"><a href="{% url 'show_todos' %}">Create</a></li>
+                
                 {% endif %} {% if user.is_authenticated %}
                 <li class="d-inline">Profile</li>
                 <li class="d-inline"><a href="{% url 'logout' %}">Logout</a></li>

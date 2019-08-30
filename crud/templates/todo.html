@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_title %}CRUD{% endblock %}
+
+{% block content %}
+
+    <h1>Order Chart</h1>
+    <ul>
+        {%for i in items %}
+         <li>
+             {{ i.name }} <a href="edit/{{i.id}}">Edit</a>
+         </li>
+        {%endfor%}
+    </ul>
+    
+{% endblock %}
