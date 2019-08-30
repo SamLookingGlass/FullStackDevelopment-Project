@@ -1,0 +1,16 @@
+lines (10 sloc)  285 Bytes
+    
+{% extends 'base.html' %}
+
+{% block page_title %}Login{%endblock%}
+
+{% block page_heading %}Login to your Account{% endblock%}
+
+
+{% block content %}   
+    <form method='POST'>
+         {% csrf_token %}
+         {{ form.as_p }}
+         <input type="submit">
+    </form>
+{% endblock %}
