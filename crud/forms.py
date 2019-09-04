@@ -6,6 +6,6 @@ class ItemForm(forms.ModelForm):
 
     class Meta:
         model = Item
-        fields = ('name', 'done')
+        fields = ('name', 'done', 'category')
         
         
