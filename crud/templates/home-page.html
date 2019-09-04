@@ -83,20 +83,33 @@
               
             </div>
             <div class="col-8">
-              <ul id="navstyle">
+              <ul id="navstyle" class="nav-flex-icons">
                     {% if not user.is_authenticated %}
-                    <li class="d-inline"><a href="{% url 'login' %}">Login</a></li>
-                    <li class="d-inline"><a href="{% url 'register' %}">Register</a></li>
-                    <li class="d-inline"><a href="/password_reset">Forgot Your Password?</a></li>
-                    
+                    <li class="nav-item d-inline"><a href="{% url 'login' %}">Login</a></li>
+                    <li class="nav-item d-inline"><a href="{% url 'register' %}">Register</a></li>
+                    <li class="nav-item d-inline"><a href="/password_reset">Forgot Your Password?</a></li>
                     <!--Test Links-->
-                    <li class="d-inline"><a href="{% url 'show_todos' %}">CRUD</a></li>
+                    <li class="nav-item d-inline"><a href="{% url 'show_todos' %}">CRUD</a></li>
+                    <li class="nav-item d-inline">
+                      <a class="nav-link waves-effect">
+                        <span class="badge red z-depth-1 mr-1"> 1 </span>
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                      </a>
+                    </li>                    
                     {% endif %} {% if user.is_authenticated %}
-                    <li class="d-inline">Profile</li>
-                    <li class="d-inline"><a href="{% url 'logout' %}">Logout</a></li>
-    
+                    <li class="nav-item d-inline">Profile</li>
+                    <li class="nav-item d-inline"><a href="{% url 'logout' %}">Logout</a></li>
+                    <li class="nav-item d-inline">
+                      <a class="nav-link waves-effect">
+                        <span class="badge red z-depth-1 mr-1"> 1 </span>
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                      </a>
+                    </li>    
                     {% endif %}
                 </ul>
+           
             </div>
             <div class="col-2">
               
