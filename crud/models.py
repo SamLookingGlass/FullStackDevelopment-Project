@@ -25,6 +25,7 @@ class Tag(models.Model):
 
 # Link between 2 models
 class OrderItem(models.Model):
+    item = models.ForeignKey(Item, null=True, on_delete=models.CASCADE)
     def __str__(self):
         return self.name        
 
