@@ -25,30 +25,57 @@
 
 <body>
 
-    <nav class="navbar navbar-dark bg-dark justify-content-between">
-        <a href="/" class="navbar-brand"><img id="navlogo" class="img-fluid" src="{% static 'images/logo.png' %}" alt="Teff Logo"></a>
-
-        <div class="d-inline">
-            <ul id="navstyle" class="d-inline">
-                {% if not user.is_authenticated %}
-                <li class="d-inline"><a href="{% url 'login' %}">Login</a></li>
-                <li class="d-inline"><a href="{% url 'register' %}">Register</a></li>
-                <li class="d-inline"><a href="/password_reset">Forgot Your Password?</a></li>
-                
-                <!--Test Links-->
-                <li class="d-inline"><a href="{% url 'show_todos' %}">CRUD</a></li>
-                <li class="d-inline"><a href="{% url 'show_todos' %}">Create</a></li>
-                
-                {% endif %} {% if user.is_authenticated %}
-                <li class="d-inline">Profile</li>
-                <li class="d-inline"><a href="{% url 'logout' %}">Logout</a></li>
-
-                {% endif %}
-            </ul>
+    <nav>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-5">
+              
+            </div>
+            <div class="col-2">
+              <a href="/" class="navbar-brand"><img id="navlogo" class="img-fluid" src="{% static 'images/logo.png' %}" alt="Teff Logo"></a>
+            </div>
+            <div class="col-5">
+              
+            </div>
+          </div>
         </div>
+        
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-2">
+              
+            </div>
+            <div class="col-8">
+              <ul id="navstyle">
+                    {% if not user.is_authenticated %}
+                    <li class="d-inline"><a href="{% url 'login' %}">Login</a></li>
+                    <li class="d-inline"><a href="{% url 'register' %}">Register</a></li>
+                    <li class="d-inline"><a href="/password_reset">Forgot Your Password?</a></li>
+                    
+                    <!--Test Links-->
+                    <li class="d-inline"><a href="{% url 'show_todos' %}">CRUD</a></li>
+                    {% endif %} {% if user.is_authenticated %}
+                    <li class="d-inline">Profile</li>
+                    <li class="d-inline"><a href="{% url 'logout' %}">Logout</a></li>
+    
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-2">
+              
+            </div>
+          </div>
+        </div>
+        
     </nav>
 
-
+    <!-- 16:9 aspect ratio -->
+    <div class="embed-responsive embed-responsive-16by9">
+      <video id="videobg" autoplay muted loop>
+            <source src="{% static 'videos/video.mp4' %}" type="video/mp4">
+      </video>
+    </div>
+        
     <section>
         <div class="jumbotron">
             <h1 class="display-4">Hello, world!</h1>
