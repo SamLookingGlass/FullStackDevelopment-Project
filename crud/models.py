@@ -1,6 +1,14 @@
 from django.db import models
 from django.conf import settings
 
+# Label Choices
+LABEL_CHOICES = (
+    ('P','primary'),
+    ('S','secondary'),
+    ('D','danger')
+)
+
+
 # Create your models here.
 class Item(models.Model):
     name = models.CharField(max_length=30, blank=False)
@@ -10,6 +18,7 @@ class Item(models.Model):
     # Linked in admin.py
     tags = models.ManyToManyField("Tag")
     product_image = models.ImageField(upload_to='images/', null=True)
+    label = models.CharField(choices=LABEL_CHOICES, max_length=1, default='P')
     def __str__(self):
         return self.name
         
