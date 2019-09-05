@@ -2,7 +2,6 @@ from django.shortcuts import render
 from .forms import ItemForm
 from django.shortcuts import render, HttpResponse, redirect, get_object_or_404
 from .models import Item
-from django.views.generic import ListView, DetailView
 
 # Create your views here.
 def show_todos(request):
@@ -39,17 +38,3 @@ def item_list(request):
         'items' : Item.objects.all()
     }
     return render(request, "home-page.html", context)
-    
-class HomeView(ListView):
-    model = Item
-    template_name = "home-page.html"
-
-def product(request):
-    context = {
-        'items' : Item.objects.all()
-    }
-    return render(request, "product-page.html", context)
-    
-class ItemDetailView(DetailView):
-    model = Item
-    template_name = "product-page.html"
