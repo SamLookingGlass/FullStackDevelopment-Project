@@ -1,134 +1,9 @@
+{% extends 'base.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Material Design Bootstrap</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-
-  <!-- Material Design Bootstrap -->
-  <link href="{% static 'vendor/css/mdb.min.css' %}" rel="stylesheet">
-  
-  <!-- Own Stylesheet -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
-
-  <!-- Bootstrap CSS CDN-->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-  <!-- Google Fonts CSS CDN-->
-  <link href="https://fonts.googleapis.com/css?family=Fjalla+One&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Amatic+SC&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display&display=swap" rel="stylesheet">
-
-  <!-- Font Awesome CSS CDN-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-  <style type="{% static 'vendor/text/css' %}">
-    html,
-    body,
-    header,
-    .carousel {
-      height: 60vh;
-    }
-
-    @media (max-width: 740px) {
-
-      html,
-      body,
-      header,
-      .carousel {
-        height: 100vh;
-      }
-    }
-
-    @media (min-width: 800px) and (max-width: 850px) {
-
-      html,
-      body,
-      header,
-      .carousel {
-        height: 100vh;
-      }
-    }
-
-  </style>
-</head>
-
-<body>
-
-  <!-- Navbar -->
-      <nav>
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-5">
-              
-            </div>
-            <div class="col-2">
-              <a href="/" class="navbar-brand"><img id="navlogo" class="img-fluid" src="{% static 'images/logo.png' %}" alt="Teff Logo"></a>
-            </div>
-            <div class="col-5">
-              
-            </div>
-          </div>
-        </div>
-        
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-2">
-              
-            </div>
-            <div class="col-8">
-              <ul id="navstyle" class="nav-flex-icons">
-                    {% if not user.is_authenticated %}
-                    <li class="nav-item d-inline"><a href="{% url 'login' %}">Login</a></li>
-                    <li class="nav-item d-inline"><a href="{% url 'register' %}">Register</a></li>
-                    <li class="nav-item d-inline"><a href="/password_reset">Forgot Your Password?</a></li>
-                    <!--Test Links-->
-                    <li class="nav-item d-inline"><a href="{% url 'show_todos' %}">CRUD</a></li>
-                    <li class="nav-item d-inline">
-                      <a class="nav-link waves-effect">
-                        <span class="badge red z-depth-1 mr-1"> 1 </span>
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-                      </a>
-                    </li>                    
-                    {% endif %} {% if user.is_authenticated %}
-                    <li class="nav-item d-inline">Profile</li>
-                    <li class="nav-item d-inline"><a href="{% url 'logout' %}">Logout</a></li>
-                    <li class="nav-item d-inline">
-                      <a class="nav-link waves-effect">
-                        <span class="badge red z-depth-1 mr-1"> 1 </span>
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-                      </a>
-                    </li>    
-                    {% endif %}
-                </ul>
-           
-            </div>
-            <div class="col-2">
-              
-            </div>
-          </div>
-        </div>
-        
-    </nav>
-  <!-- Navbar -->
-
-  <!-- Video Background -->
-    
-    <!-- 16:9 aspect ratio -->
-    <div class="embed-responsive embed-responsive-16by9">
-      <video id="videobg" autoplay muted loop>
-            <source src="{% static 'videos/video.mp4' %}" type="video/mp4">
-      </video>
-    </div>
-    
   <!--Main layout-->
   <main>
     <div class="container">
@@ -185,7 +60,7 @@
         <!--Grid row-->
         <div class="row wow fadeIn">
           
-          {% for item in object_list %}
+          {% for item in items %}
           <!--Grid column-->
           <div class="col-lg-3 col-md-6 mb-4">
 
@@ -279,72 +154,5 @@
     </div>
   </main>
   <!--Main layout-->
-
-  <!--Footer-->
-  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
-    <hr class="my-4">
-
-    <!-- Social icons -->
-    <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
-
-      <a href="https://twitter.com/MDBootstrap" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-        <i class="fab fa-google-plus-g mr-3"></i>
-      </a>
-
-      <a href="https://dribbble.com/mdbootstrap" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
-
-      <a href="https://pinterest.com/mdbootstrap" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-
-      <a href="http://codepen.io/mdbootstrap/" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
-      </a>
-    </div>
-    <!-- Social icons -->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-      © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
-    </div>
-    <!--/.Copyright-->
-
-  </footer>
-  <!--/.Footer-->
-
-  <!-- SCRIPTS -->
-  <!-- JQuery -->
-  <script type="text/javascript" src="{% static 'vendor/js/jquery-3.4.1.min.js' %}"></script>
-  <!-- Bootstrap tooltips -->
-  <script type="text/javascript" src="{% static 'vendor/js/popper.min.js' %}"></script>
-  <!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="{% static 'vendor/js/bootstrap.min.js' %}"></script>
-  <!-- MDB core JavaScript -->
-  <script type="text/javascript" src="{% static 'vendor/js/mdb.min.js' %}"></script>
-  <!-- Initializations -->
-  <script type="text/javascript">
-    // Animations initialization
-    new WOW().init();
-
-  </script>
-</body>
-
-</html>
+  
+{% endblock content %}  
