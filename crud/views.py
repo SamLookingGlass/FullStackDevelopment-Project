@@ -46,8 +46,7 @@ def item_list(request):
 #     template_name = "home-page.html"
 
 def product(request, id):
-    item = get_object_or_404(Item, pk=id)
-    results = Item.objects.all()
+    results = Item.objects.get(pk=id)
     context = {
         'items' : results
     }

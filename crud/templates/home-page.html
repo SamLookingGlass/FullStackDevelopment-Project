@@ -85,7 +85,7 @@
                 </a>
                 <h5>
                   <strong>
-                    <a href="" class="dark-grey-text">{{ item.name }}
+                    <a href="{% url 'product' item.pk %}" class="dark-grey-text">{{ item.name }}
                       <span class="badge badge-pill {{ item.get_label_display }}-color">NEW</span>
                     </a>
                   </strong>

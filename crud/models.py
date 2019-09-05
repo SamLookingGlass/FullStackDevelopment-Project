@@ -13,6 +13,7 @@ LABEL_CHOICES = (
 class Item(models.Model):
     name = models.CharField(max_length=30, blank=False)
     price = models.FloatField(null=True)
+    description = models.CharField(max_length=255, null=True)
     product_image = models.ImageField(upload_to='images/', null=True)
     label = models.CharField(choices=LABEL_CHOICES, max_length=1, default='P')
     # Linked in admin.py
