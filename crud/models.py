@@ -37,10 +37,11 @@ class Size(models.Model):
         return self.name
 
 class Inventory(models.Model):
-    name = models.ForeignKey('Item', on_delete=models.CASCADE) 
+    item = models.ForeignKey('Item', on_delete=models.CASCADE) 
     size = models.ForeignKey('Size', on_delete=models.CASCADE)
+    stock = models.FloatField(null=True)
     def __str__(self):
-        return self.name
+        return self.item.name + " " + self.size.name 
 
 # Link between 2 models
 class OrderItem(models.Model):
