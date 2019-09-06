@@ -44,18 +44,4 @@ class Inventory(models.Model):
     def __str__(self):
         return self.item.name + " " + self.size.name 
 
-# Link between 2 models
-class OrderItem(models.Model):
-    item = models.ForeignKey(Item, null=True, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.name        
-
-class Order(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    items = models.ManyToManyField(OrderItem)
-    start_date = models.DateTimeField(auto_now_add=True)
-    ordered_date = models.DateTimeField()
-    ordered = models.BooleanField(default=False)
-    def __str__(self):
-        return self.name        
 
