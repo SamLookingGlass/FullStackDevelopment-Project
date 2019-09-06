@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -79,12 +80,7 @@ WSGI_APPLICATION = 'teffwebsite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+DATABASES = {'default': dj_database_url.parse('postgres://rnqndftzpvwuta:dbb8270edfb16c7c32955578c7c79147733f313aee335d0af8226d7f1b1cb536@ec2-54-221-214-3.compute-1.amazonaws.com:5432/db422dvhjkltjp')}
 
 
 # Password validation
