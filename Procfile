@@ -1,0 +1,1 @@
+web: gunicorn teffwebsite.wsgi:application

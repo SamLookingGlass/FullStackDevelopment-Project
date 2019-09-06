@@ -27,8 +27,8 @@ SECRET_KEY = 'pd44h2zgxilb16))g5om&gai$3^z=-f-)q3yq(1z2$%x)l&slu'
 DEBUG = True
 
 # ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), '127.0.0.1']
-ALLOWED_HOSTS = ['799d19299ce140899b645dd1f1c8241d.vfs.cloud9.us-east-1.amazonaws.com']
-
+ALLOWED_HOSTS = ['799d19299ce140899b645dd1f1c8241d.vfs.cloud9.us-east-1.amazonaws.com',
+'https://tsw-teffweb.herokuapp.com/']
 
 # Application definition
 
