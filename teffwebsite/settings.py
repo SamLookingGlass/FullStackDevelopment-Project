@@ -28,7 +28,7 @@ DEBUG = True
 
 # ALLOWED_HOSTS = [os.environ.get("C9_HOSTNAME"), '127.0.0.1']
 ALLOWED_HOSTS = ['799d19299ce140899b645dd1f1c8241d.vfs.cloud9.us-east-1.amazonaws.com',
-'https://tsw-teffweb.herokuapp.com/']
+'tsw-teff.herokuapp.com']
 
 # Application definition
 
