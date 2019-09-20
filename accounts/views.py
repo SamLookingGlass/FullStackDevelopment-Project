@@ -6,7 +6,7 @@ from .forms import UserLoginForm, UserRegistrationForm
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'home-page.html')
     
 def logout(request):
     auth.logout(request)
