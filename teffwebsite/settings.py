@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'accounts',
     'crud',
     'cart',
+    'pyuploadcare.dj',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,8 @@ AUTHENTICATION_BACKENDS = (
 )
 
 MESSAGE_STORAGE = "django.contrib.messages.storage.session.SessionStorage"
+
+UPLOADCARE = {
+    'pub_key': 'd8600f764168ac58f54f',
+    'secret': '17303c2cae8c4230f07c',
+}
