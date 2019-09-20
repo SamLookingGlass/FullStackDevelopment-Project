@@ -1,5 +1,7 @@
 from django.db import models
 from django.conf import settings
+# Import image field from UploadCare
+from pyuploadcare.dj.models import ImageField
 
 # Label Choices
 LABEL_CHOICES = (
@@ -14,7 +16,8 @@ class Item(models.Model):
     name = models.CharField(max_length=30, blank=False)
     price = models.FloatField(null=True)
     description = models.CharField(max_length=255, null=True)
-    product_image = models.ImageField(upload_to='images/', null=True)
+    # product_image = models.ImageField(upload_to='images/', null=True)
+    product_image = ImageField(null=True)
     label = models.CharField(choices=LABEL_CHOICES, max_length=1, default='P')
     # Linked in admin.py
     category = models.ForeignKey('Category', on_delete=models.CASCADE)
