@@ -1,14 +1,23 @@
-# Fullstack Development Milestone Project – 'Teff' E-commerce  
+# Fullstack Development Milestone Project – 'Teff' E-commerce (Updated)
 
 # Context
 
 This project focuses on the full-stack development for a mobile-responsive web-based e-commerce website called ‘Teff’. 'Teff' is a purveyor of t-shirts with sleek and modern designs. 
 
-The website requires users to create an account before checking out. 
+The website has a login feature and requires users to create an account before they are able to check out items for purchase. 
 
 # Demo
 The e-commerce website can be found here: https://tsw-teff.herokuapp.com/
-The website has not been deployed yet but the source code is available for inspection. 
+The website has been deployed successfully on heroku but currently has a couple of bugs and features that are not working. The source code, however, is available for inspection. 
+
+# Index
+1. UX
+2. Technologies Used
+3. Future Features To Implement
+4. Testing
+5. Known Bugs
+6. Deployment
+7. Credits and Acknoledgement
 
 # 1. User Experience (UX)
 #### (i) Project Strategy
