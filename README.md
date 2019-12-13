@@ -1,4 +1,5 @@
-# Fullstack Development Milestone Project – 'Teff' E-commerce  
+# Fullstack Development Milestone Project – 'Teff' E-commerce  (Archived)
+# Updated Project on branch1 (https://github.com/SamLookingGlass/FullStackDevelopment-Project/tree/branch1)
 
 # Context
 
