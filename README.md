@@ -15,9 +15,8 @@ The website has been deployed successfully on heroku but currently has a couple 
 2. Technologies Used
 3. Future Features To Implement
 4. Testing
-5. Known Bugs
-6. Deployment
-7. Credits and Acknoledgement
+5. Deployment
+6. Credits and Acknoledgement
 
 # 1. User Experience (UX)
 #### (i) Project Strategy
@@ -60,12 +59,25 @@ The website has been deployed successfully on heroku but currently has a couple 
 | 2.| Teff web application is able to send automated emails to customers (e.g. when a customer registers an account, when a customer makes a purchase, when a customer requests for promotional emails, etc.)|
 | 3.| Dashboard for administator to track customer orders, customer issues and total revenue generated.|
 
-# 6. Deployment
+# 4. Testing
+
+Django Admin Account
+ID: user
+Password: password
+
+1. Admin is able to create/edit/delete entries on the categorys.
+2. Admin is able to create/edit/delete entries on the items.
+3. Admin is able to create/edit/delete entries on the inventorys.
+4. Admin is able to create/edit/delete entries on the sizes.
+5. Admin is able to create/edit/delete entries on the tags.
+6. User is able to create an account and login.
+
+# 5. Deployment
 #### (i) Development Process
 - All codes was written on AWS Cloud9 and codes were saved and tested locally. 
 - Regular committing and pushing of codes to GitHub ensured that changes to codes can be tracked and allows for version control maintainence.
 - Heroku was set up first before embarking on code development.   
 
-# 7. Credits and Acknowledgement
+# 6. Credits and Acknowledgement
 - Credited to Pexel.com for the photos and videos used on the wbsite
 - The website template was adapted from https://mdbootstrap.com/freebies/jquery/e-commerce/
